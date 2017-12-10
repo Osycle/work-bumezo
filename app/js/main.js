@@ -7,8 +7,8 @@ $(function(){
 
 
 	// FANCYBOX
-	if( $("[data-fancybox='gallery']").length != 0 )
-		$("[data-fancybox='gallery']").fancybox({
+	if( $("[data-fancybox='article-l-items']").length != 0 )
+		$("[data-fancybox='article-l-items']").fancybox({
 			afterShow : function( instance, current ) {
 			},
 			animationEffect : "fade",
@@ -75,12 +75,14 @@ $(function(){
 	});
 
 	carouselStock.on( 'select.flickity', function() {
+
 	  $(this).find(".is-selected")
 	  	.siblings()
 	  	.removeClass("is-sel").end()
 	  	.prev().addClass("is-sel").end()
 	  	.next().addClass("is-sel");
 	})
+
 	if( $(".short-stock .flickity-prev-next-button") ){
 		var farrows = $(".short-stock .flickity-prev-next-button");
 		farrows.eq(0)
@@ -88,6 +90,33 @@ $(function(){
 			.siblings(".container")
 			.append( farrows );
 	}
+
+
+	$('.leasing-article-content .carousel-main').flickity({
+		imagesLoaded: true,
+		prevNextButtons: false,
+		cellAlign: 'center',
+		friction: 1,
+		selectedAttraction: 1,
+		draggable: !(checkView(992)),
+		contain: true,
+		pageDots: false
+	});
+	$('.leasing-article-content .carousel-nav').flickity({
+		imagesLoaded: true,
+	  asNavFor: '.leasing-article-content .carousel-main',
+	  prevNextButtons: false,
+	  draggable: !false,
+	  adaptiveHeight: true,
+	  contain: true,
+	  pageDots: false
+	});
+
+
+
+
+
+
 
 	//FORM
 	(function() {
@@ -162,7 +191,7 @@ $(function(){
 	var images = 						 		document.images,
 			imagesTotalCount = 			images.length,
 			imagesLoadedCount = 		0,
-			preloadPercent = 		 $(".percent");
+			preloadPercent = 		 		$(".percent");
 
 	for ( var i = 0; i < imagesTotalCount ; i++ ) {
 		var image_clone = new Image();
@@ -176,95 +205,93 @@ $(function(){
 		imagesLoadedCount++;
 
 		var per = ( ( 100 / imagesTotalCount ) * imagesLoadedCount ) << 0 ;
-		var ser = ( ( 400 * Math.PI / imagesTotalCount ) * imagesLoadedCount ) << 0 ;
 
 		setTimeout( function(){
 			$(preloadPercent).text(  per +  "%"); 
-		}, 220)
+		}, 1)
 
-		$(".logo-circle-1").eq(0).css("stroke-dasharray", ser).css("stroke-width", 3);
+		//$("#pre-logo").css("opacity", per/100);
 
 		imagesLoadedCount >= imagesTotalCount ? 
 
 			setTimeout( function (){
 
-				$(".preloader").slideToggle();
+				$(".preloader").fadeToggle();
 				$( "body" ).css("overflow-y", "auto");
 				onLoaded()
 
-			
-
-			}, 600)
+			}, 300)
 
 		: void(0);
 	}
 
 	//PAGES REV SLIDER
-	if ( $('.rev-slider-page').length != 0 )
-		  $('.rev-slider-page').revolution({
-					delay:9000,
-					startwidth: $( window ).width(),
-					startheight: 532,
-					autoHeight:"off",
-					fullScreenAlignForce:"off",
+	if ( $('.rev-slider-page') )
 
-					onHoverStop:"off",
+	    $('.rev-slider-page').revolution({
+				delay:6000,
+				startwidth: 1199,
+				startheight: 514,
+				autoHeight:"on",
+				fullScreenAlignForce:"off",
 
-					thumbWidth:100,
-					thumbHeight:50,
-					thumbAmount:3,
+				onHoverStop:"on",
 
-					hideThumbsOnMobile:"off",
-					hideBulletsOnMobile:"on",
-					hideArrowsOnMobile:"off",
-					hideThumbsUnderResoluition:0,
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:3,
 
-					hideThumbs:-1,
-					hideTimerBar:"on",
+				hideThumbsOnMobile:"on",
+				hideBulletsOnMobile:"on",
+				hideArrowsOnMobile:"on",
+				hideThumbsUnderResoluition:0,
 
-					keyboardNavigation:"off",
+				hideThumbs: 500,
+				hideTimerBar:"on",
 
-					navigationType:"bullet",
-					navigationArrows:"small",
-					navigationStyle:"round",
+				keyboardNavigation:"on",
 
-					navigationHAlign:"center",
-					navigationVAlign:"bottom",
-					navigationHOffset: 0,
-					navigationVOffset:-30,
+				navigationType:"bullet",
+				navigationArrows:"small",
+				navigationStyle:"round",
 
-					soloArrowLeftHalign:"left",
-					soloArrowLeftValign:"center",
-					soloArrowLeftHOffset:20,
-					soloArrowLeftVOffset:0,
+				navigationHAlign:"center",
+				navigationVAlign:"bottom",
+				navigationHOffset: 0,
+				navigationVOffset: 30,
 
-					soloArrowRightHalign:"right",
-					soloArrowRightValign:"center",
-					soloArrowRightHOffset:20,
-					soloArrowRightVOffset:0,
+				soloArrowLeftHalign:"left",
+				soloArrowLeftValign:"center",
+				soloArrowLeftHOffset:30,
+				soloArrowLeftVOffset:0,
+
+				soloArrowRightHalign:"right",
+				soloArrowRightValign:"center",
+				soloArrowRightHOffset:30,
+				soloArrowRightVOffset:0,
 
 
-					touchenabled:"off",
-					swipe_velocity:"0.7",
-					swipe_max_touches:"1",
-					swipe_min_touches:"1",
-					drag_block_vertical:"false",
+				touchenabled: "off",
+				swipe_velocity:"0.7",
+				swipe_max_touches:"1",
+				swipe_min_touches:"1",
+				drag_block_vertical:"true",
 
-					stopAtSlide:-1,
-					stopAfterLoops:-1,
-					hideCaptionAtLimit:0,
-					hideAllCaptionAtLilmit:0,
-					hideSliderAtLimit:0,
+				stopAtSlide:-1,
+				stopAfterLoops:-1,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				hideSliderAtLimit:0,
 
-					fullWidth:"on",
-					fullScreen:"off",
-					fullScreenOffsetContainer: "",
+				fullWidth:"on",
+				fullScreen:"off",
+				fullScreenOffsetContainer: "",
 
-					dottedOverlay:"none",
-					forceFullWidth:"off",
+				dottedOverlay:"none",
+				forceFullWidth:"off",
 
-		      shadow:0
-		  });
+	      shadow:0
+	    });
 
 
 	var dustContent = $( $("#dust-content") );
