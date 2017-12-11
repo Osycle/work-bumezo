@@ -92,7 +92,7 @@ $(function(){
 	}
 
 
-	$('.leasing-article-content .carousel-main').flickity({
+	$('.catalog-article-content .carousel-main').flickity({
 		imagesLoaded: true,
 		prevNextButtons: false,
 		cellAlign: 'center',
@@ -102,11 +102,12 @@ $(function(){
 		contain: true,
 		pageDots: false
 	});
-	$('.leasing-article-content .carousel-nav').flickity({
+	$('.catalog-article-content .carousel-nav').flickity({
 		imagesLoaded: true,
-	  asNavFor: '.leasing-article-content .carousel-main',
-	  prevNextButtons: false,
+	  asNavFor: '.catalog-article-content .carousel-main',
+	  prevNextButtons: true,
 	  draggable: !false,
+	  cellAlign: 'center',
 	  adaptiveHeight: true,
 	  contain: true,
 	  pageDots: false
@@ -231,7 +232,7 @@ $(function(){
 	    $('.rev-slider-page').revolution({
 				delay:6000,
 				startwidth: 1199,
-				startheight: 514,
+				startheight: 500,
 				autoHeight:"on",
 				fullScreenAlignForce:"off",
 
