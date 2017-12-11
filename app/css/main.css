@@ -16698,7 +16698,6 @@ html {
   -ms-scrollbar-highlight-color: transparent; }
 
 body {
-  overflow-y: hidden;
   -ms-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   -moz-osx-font-smoothing: grayscale;

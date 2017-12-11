@@ -76,42 +76,56 @@ $(function(){
 
 	carouselStock.on( 'select.flickity', function() {
 
-	  $(this).find(".is-selected")
-	  	.siblings()
-	  	.removeClass("is-sel").end()
-	  	.prev().addClass("is-sel").end()
-	  	.next().addClass("is-sel");
+	  $(this)	.find(".is-selected")
+				  	.siblings()
+				  	.removeClass("is-sel").end()
+				  	.prev().addClass("is-sel").end()
+				  	.next().addClass("is-sel");
+
 	})
 
 	if( $(".short-stock .flickity-prev-next-button") ){
+
 		var farrows = $(".short-stock .flickity-prev-next-button");
+
 		farrows.eq(0)
 			.before("<div class='container'></div>")
 			.siblings(".container")
 			.append( farrows );
+
 	}
 
+	if( $('.catalog-article-content .carousel-main').length >= 0 ){
 
-	$('.catalog-article-content .carousel-main').flickity({
-		imagesLoaded: true,
-		prevNextButtons: false,
-		cellAlign: 'center',
-		friction: 1,
-		selectedAttraction: 1,
-		draggable: !(checkView(992)),
-		contain: true,
-		pageDots: false
-	});
-	$('.catalog-article-content .carousel-nav').flickity({
-		imagesLoaded: true,
-	  asNavFor: '.catalog-article-content .carousel-main',
-	  prevNextButtons: true,
-	  draggable: !false,
-	  cellAlign: 'center',
-	  adaptiveHeight: true,
-	  contain: true,
-	  pageDots: false
-	});
+		var carouselMain = 		$('.catalog-article-content .carousel-main'),
+				carouselNav = 		$('.catalog-article-content .carousel-nav');
+
+		for( var i = 0 ; i < carouselMain.length ; i++ ){
+
+			$(carouselMain).eq(i).flickity({
+				imagesLoaded: true,
+				prevNextButtons: false,
+				cellAlign: 'center',
+				friction: 1,
+				selectedAttraction: 1,
+				draggable: !(checkView(992)),
+				contain: true,
+				pageDots: false
+			});
+
+			$(carouselNav).eq(i).flickity({
+				imagesLoaded: true,
+			  asNavFor: $(carouselMain)[i],
+			  prevNextButtons: true,
+			  draggable: !false,
+			  cellAlign: 'center',
+			  adaptiveHeight: true,
+			  contain: true,
+			  pageDots: false
+			});
+
+		}
+	}
 
 
 
@@ -218,7 +232,7 @@ $(function(){
 			setTimeout( function (){
 
 				$(".preloader").fadeToggle();
-				$( "body" ).css("overflow-y", "auto");
+				//$( "body" ).css("overflow-y", "auto");
 				onLoaded()
 
 			}, 300)
