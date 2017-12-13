@@ -192,16 +192,21 @@ $(function(){
 	//SCROLL
 	var header_status = false;
 	$( window ).on("scroll", function(e){
+
 		if($(window).scrollTop() > 300 && header_status == false){
-			header_status = true; 
+
+			header_status = true;
+
+			if ( $(".min-menu") ) $(".min-menu").addClass("scrolled");
+
 		}else if($(window).scrollTop() < 300 && header_status == true){
+
 			header_status = false;
+			if ( $(".min-menu") ) $(".min-menu").removeClass("scrolled");
+
 		}
+
 	});
-
-
-
-
 
 	var images = 						 		document.images,
 			imagesTotalCount = 			images.length,
@@ -241,8 +246,7 @@ $(function(){
 	}
 
 	//PAGES REV SLIDER
-	if ( $('.rev-slider-page') )
-
+	if( $('.rev-slider-page') )
 	    $('.rev-slider-page').revolution({
 				delay:6000,
 				startwidth: 1199,
@@ -250,62 +254,62 @@ $(function(){
 				autoHeight:"on",
 				fullScreenAlignForce:"off",
 
-				onHoverStop:"on",
+					onHoverStop:"off",
 
-				thumbWidth:100,
-				thumbHeight:50,
-				thumbAmount:3,
+					thumbWidth:100,
+					thumbHeight:50,
+					thumbAmount:3,
 
-				hideThumbsOnMobile:"on",
-				hideBulletsOnMobile:"on",
-				hideArrowsOnMobile:"on",
-				hideThumbsUnderResoluition:0,
+					hideThumbsOnMobile:"off",
+					hideBulletsOnMobile:"on",
+					hideArrowsOnMobile:"off",
+					hideThumbsUnderResoluition:0,
 
-				hideThumbs: 500,
-				hideTimerBar:"on",
+					hideThumbs:-1,
+					hideTimerBar:"on",
 
-				keyboardNavigation:"on",
+					keyboardNavigation:"off",
 
-				navigationType:"bullet",
-				navigationArrows:"small",
-				navigationStyle:"round",
+					navigationType:"bullet",
+					navigationArrows:"small",
+					navigationStyle:"round",
 
-				navigationHAlign:"center",
-				navigationVAlign:"bottom",
-				navigationHOffset: 0,
-				navigationVOffset: 30,
+					navigationHAlign:"center",
+					navigationVAlign:"bottom",
+					navigationHOffset: 0,
+					navigationVOffset:-30,
 
-				soloArrowLeftHalign:"left",
-				soloArrowLeftValign:"center",
-				soloArrowLeftHOffset:30,
-				soloArrowLeftVOffset:0,
+					soloArrowLeftHalign:"left",
+					soloArrowLeftValign:"center",
+					soloArrowLeftHOffset:20,
+					soloArrowLeftVOffset:0,
 
-				soloArrowRightHalign:"right",
-				soloArrowRightValign:"center",
-				soloArrowRightHOffset:30,
-				soloArrowRightVOffset:0,
+					soloArrowRightHalign:"right",
+					soloArrowRightValign:"center",
+					soloArrowRightHOffset:20,
+					soloArrowRightVOffset:0,
 
 
-				touchenabled: "off",
-				swipe_velocity:"0.7",
-				swipe_max_touches:"1",
-				swipe_min_touches:"1",
-				drag_block_vertical:"true",
+					touchenabled:"off",
+					swipe_velocity:"0.7",
+					swipe_max_touches:"1",
+					swipe_min_touches:"1",
+					drag_block_vertical:"false",
 
-				stopAtSlide:-1,
-				stopAfterLoops:-1,
-				hideCaptionAtLimit:0,
-				hideAllCaptionAtLilmit:0,
-				hideSliderAtLimit:0,
+					stopAtSlide:-1,
+					stopAfterLoops:-1,
+					hideCaptionAtLimit:0,
+					hideAllCaptionAtLilmit:0,
+					hideSliderAtLimit:0,
 
-				fullWidth:"on",
-				fullScreen:"off",
-				fullScreenOffsetContainer: "",
+					fullWidth:"on",
+					fullScreen:"off",
+					fullScreenOffsetContainer: "",
 
-				dottedOverlay:"none",
-				forceFullWidth:"off",
+					dottedOverlay:"none",
+					forceFullWidth:"off",
 
-	      shadow:0
+		      shadow:0
 	    });
 
 

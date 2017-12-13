@@ -128,6 +128,7 @@
 
 	<!-- MIN - MENU -->
   <div class="min-menu hidden-md hidden-lg">
+  	<div class="bg-black clearfix"></div>
   	<div class="min-menu-logo">
 			<a  href="index.html" ><img src="img/logo.png"/></a>
   	</div>
@@ -149,33 +150,33 @@
 				</ul>
 
 				<div class="min-menu-cat col-xs-12">
-				  <div class="col-xs-6 min-menu-cat-item">
+				  <div class="col-sm-6 col-xs-12 min-menu-cat-item">
 		    		<a href="catalog-article.html"><i class="i-ls-kitchen"></i>
 		    			<p>Кухни</p>
 		    		</a>
 		    	</div>
 
-		    	<div class="col-xs-6 min-menu-cat-item">
+		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
 		    		<a href="catalog-article.html"><i class="i-ls-wardrobe"></i>
 		    			<p>Шкафы гардеробные</p>
 		    		</a>
 		    	</div>
-		    	<div class="col-xs-6 min-menu-cat-item">
+		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
 		    		<a href="catalog-article.html"><i class="i-ls-double-bed"></i>
 		    			<p>Спальная мебель</p>
 		    		</a>
 		    	</div>
-		    	<div class="col-xs-6 min-menu-cat-item">
+		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
 		    		<a href="catalog-article.html"><i class="i-ls-desk"></i>
 		    			<p>Детская мебель</p>
 		    		</a>
 		    	</div>
-		    	<div class="col-xs-6 min-menu-cat-item">
+		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
 		    		<a href="catalog-article.html"><i class="i-ls-sofa"></i>
 		    			<p>Мягкая мебель</p>
 		    		</a>
 		    	</div>
-		    	<div class="col-xs-6 min-menu-cat-item">
+		    	<div class="col-sm-6 col-xs-12 min-menu-cat-item">
 		    		<a href="catalog-article.html"><i class="i-ls-television"></i>
 		    			<p>Гостиная мебель</p>
 		    		</a>
@@ -195,7 +196,6 @@
 
 	<div class="preloader">
 		<div class="loader">
-
 			<span class="img-content">
 				<img id="pre-logo" src="img/logo.png"/>
 			</span>
@@ -210,9 +210,8 @@
 
 
 
-
-	<!-- FEEDBACK MODAL-->
-	<div class="feedback-modal modal fade animated" id="feedback-modal-1" tabindex="-1" role="dialog" aria-labelledby="feedback">
+	<!-- BID MODAL-->
+	<div class="bid-modal modal fade animated" id="modal-bid" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 
@@ -224,22 +223,23 @@
 	      <div class="modal-body">
 
 
-					<div class="col-md-12 success-info">
+					<div class="col-md-12 success-info hide">
 						<div id="success-message"></div>
 						<div id="fail-message"></div>
 					</div>
+
 					<h3>Связаться с нами</h3>
-					<form id="feedback-form" method="post" action="" class="contact-form">
+					<form id="modal-bid-form" method="post" action="" class="contact-form">
 
 
 
 						<!-- NAME -->
 						<span class="input input--nariko input-name">
 							<input class="input__field input__field--nariko" 
-										 form="feedback-form"
 										 type="text" 
 										 id="input-1" 
 										 name="name"
+										 minlength="2"
 										 autocomplete="off" 
 										 required="required"/>
 
@@ -247,13 +247,10 @@
 								<span class="input__label-content input__label-content--nariko">Имя</span>
 							</label>
 						</span>
-						<br>
-
 						<!-- EMAIL -->
 						<span class="input input--nariko input-email">
 
 							<input class="input__field input__field--nariko" 
-										 form="feedback-form"
 										 type="email" 
 										 id="input-2" 
 										 name="email"
@@ -265,13 +262,10 @@
 							</label>
 
 						</span>
-
-						<br>
 						<!-- TEL -->
 						<span class="input input--nariko input-phone">
 
 							<input class="input__field input__field--nariko" 
-										 form="feedback-form"
 										 type="tel" 
 										 id="input-3" 
 										 name="tel"
@@ -283,7 +277,6 @@
 							</label>
 
 						</span>
-						<br>
 						<!-- MESSAGE -->
 						<span class="textarea">
 							<label class="" for="textarea-4">
@@ -292,18 +285,14 @@
 							<textarea class="" 
 										 style="resize: none;"
 										 id="textarea-4"
-										 form="feedback-form"
 										 type="text" 
 										 name="message"
 										 autocomplete="off" 
 										 required="required"></textarea>
-
-
-
 						</span>
 
 						<div class="form-footer">
-			      	<button type="submit" class="align-right btn-default submit" form="feedback-form">
+			      	<button type="submit" class="align-right btn-def submit">
 			      		<b>Отправить</b>
 			      	</button>
 			      </div>
@@ -315,11 +304,6 @@
 	    </div>
 	  </div>
 	</div>
-
-
-
-
-
 
 
 
