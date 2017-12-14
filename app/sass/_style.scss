@@ -2477,32 +2477,36 @@ main{
 
 
 
-#map{
-	display: block;
-	height: 650px;
-	z-index: 1;
-	color: $color_3;
 
-	h1{
-		margin-top: 0;
-		margin-left: 10px;
-		display: inline-block;
-		&:before{
-			left: 50px;
-		}
-	}
-	img{
-			vertical-align: text-bottom;
-	}
-	p{
-		color: white;
-		text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
-		margin-left: 10px;
-	}
-	@media only screen and ( max-width: 991px ){
-		height: 350px;
-	}
+
+// ------------------- ABOUT
+
+
+
+.about{
+	.bonus-phone{
+		background-image: url("../img/");
+		@include table-celling(390px);
+	}	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

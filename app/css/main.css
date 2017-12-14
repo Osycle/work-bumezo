@@ -18439,26 +18439,11 @@ main {
   border-left: 4px solid #79B833;
   border-right: 3px solid #E4097F; }
 
-#map {
-  display: block;
-  height: 650px;
-  z-index: 1;
-  color: #5FC6F1; }
-  #map h1 {
-    margin-top: 0;
-    margin-left: 10px;
-    display: inline-block; }
-    #map h1:before {
-      left: 50px; }
-  #map img {
-    vertical-align: text-bottom; }
-  #map p {
-    color: white;
-    text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
-    margin-left: 10px; }
-  @media only screen and (max-width: 991px) {
-    #map {
-      height: 350px; } }
+.about .bonus-phone {
+  background-image: url("../img/");
+  display: table-cell;
+  height: 390px;
+  vertical-align: middle; }
 
 .partners .img-content, .partners .desc-content {
   vertical-align: middle;
