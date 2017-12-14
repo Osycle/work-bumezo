@@ -238,7 +238,7 @@ $(function(){
 
 				$(".preloader").fadeToggle();
 				//$( "body" ).css("overflow-y", "auto");
-				onLoaded()
+				onLoaded();
 
 			}, 300)
 

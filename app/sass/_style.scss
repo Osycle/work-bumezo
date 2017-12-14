@@ -2316,6 +2316,15 @@ main{
 
 .contacts{
 
+	.row:hover{
+
+		.contacts-map{
+			h1::before, h1::after{
+				width: 15px;
+			}
+		}
+
+	} 
 }
 .contacts-content{
 	.soc-tel{
@@ -2324,23 +2333,32 @@ main{
 			margin: 0px 0;
 		}
 	}
-	.contacts-info-item{
-		&:nth-child(n+2){
-			padding-left: 70px;
-		}
-	}
 
+	@media (min-width: 992px){
+
+		.contacts-info-item{
+			&:nth-child(n+2){
+				padding-left: 70px;
+			}
+		}
+		
+	}
 
 }
 .blockquote{
 	border-left: 10px solid;
 	min-height: 100px;
+
+	&.align-right{
+		border-left: unset;
+		border-right: 10px solid ;
+	}
 	&.style-1{border-color: $color_1;}
 	&.style-2{border-color: $color_2;}
 	&.style-3{border-color: $color_3;}
 	&.style-4{border-color: $color_4;}
 	.desc-content{
-		margin-top: 10px;
+		margin-top: 15px;
 	}
 	p{
 		line-height: 155%;
@@ -2375,7 +2393,7 @@ main{
 		border: 1px solid #d1d1d1;
 		height: 200px;
 		&:focus{
-			border-color: $color_3;
+			border-color: $color_1;
 		}
 	}
 	span[class*="col"]{
@@ -2391,19 +2409,74 @@ main{
 
 
 
+.contacts-map{
+
+	h1{
+		&:before, &:after{
+			border-top: initial;
+			border-bottom: initial;
+		}
+		&:before, &:after{
+	    width: 15px;
+	    height: 30px;
+	    transition: all 0.3s ease-out;
+	    vertical-align: sub;
+	    position: relative;
+	    display: inline-block;
+	    visibility: hidden;
+	    &:hover{
+
+	    }
+		}
+		&:before{
+			border-left: 5px solid $color_1;
+    	border-right: 5px solid $color_2;
+		}
+		&:after{
+			border-left: 5px solid $color_3;
+    	border-right: 5px solid $color_4;
+		}
 
 
 
 
+		i{
+			&:before, &:after{
+				@extend .claf;
+				width: 13px;
+	    	height: 19px;
+	    	transition: all 0.3s ease-out;
+	    	vertical-align: baseline;
+	    	position: relative;
+	    	display: inline-block;
+		    margin-left: 2px;
+		    margin-right: 1px;
+		    @media (max-width:991px){height: 30px;}
+			}
+			&:before{
+				border-left: 5px solid $color_1;
+	    	border-right: 4.5px solid $color_3;
+			}
+			&:after{
+				width: 10px;
+				border-left: 4px solid $color_2;
+	    	border-right: 3px solid $color_4;
 
-.map-column{
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  text-align: left;
-  float: none;
-  margin-bottom: -30px;
+			}
+		}
+
+
+
+	}
+
 }
+
+
+
+
+
+
+
 #map{
 	display: block;
 	height: 650px;
@@ -2430,13 +2503,6 @@ main{
 		height: 350px;
 	}
 }
-
-.map-content{
-  border-radius: 15px;
-  overflow: hidden;
-}
-
-
 
 
 
