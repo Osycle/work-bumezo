@@ -21,17 +21,6 @@ $(function(){
 	}).init();
 
 
-	// SKROLLR
-	if( !isMobile ){
-
-		var skr = skrollr.init({
-			smoothScrolling: true,
-			mobileDeceleration: 0.004
-		});
-		setTimeout( function(){ skr.refresh() }, 10 )
-	}
-
-
   // Flikity Carousel
   	var arrowStyle = { 
 		  x0: 10,
@@ -94,6 +83,20 @@ $(function(){
 			.append( farrows );
 
 	}
+
+/*	setTimeout( function(){
+
+	if( $(".index-slider .tparrows") ){
+
+		var farrows = $(".index-slider .tparrows");
+
+		var x = farrows.eq(0)
+			.before('<div class="container-fluid"><div class="container arrows"></div></div>')
+			.siblings(".container-fluid").find(".container")
+			.append( farrows );
+			console.log( x )
+	}
+}, 1 )*/
 
 	if( $('.catalog-article-content .carousel-main').length >= 0 ){
 
@@ -245,176 +248,75 @@ $(function(){
 		: void(0);
 	}
 
+
+
 	//PAGES REV SLIDER
 	if( $('.rev-slider-page') )
 	    $('.rev-slider-page').revolution({
 				delay:6000,
-				startwidth: 1199,
-				startheight: 500,
-				autoHeight:"on",
+				startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
+				//startwidth: 1170,
+				startheight: $( window ).width() < 992 ? 500 : 500,
+				autoHeight:"off",
 				fullScreenAlignForce:"off",
 
-					onHoverStop:"off",
+				onHoverStop:"off",
 
-					thumbWidth:100,
-					thumbHeight:50,
-					thumbAmount:3,
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:3,
 
-					hideThumbsOnMobile:"off",
-					hideBulletsOnMobile:"on",
-					hideArrowsOnMobile:"off",
-					hideThumbsUnderResoluition:0,
+				hideThumbsOnMobile:"off",
+				hideBulletsOnMobile:"on",
+				hideArrowsOnMobile:"off",
+				hideThumbsUnderResoluition:0,
 
-					hideThumbs:-1,
-					hideTimerBar:"on",
+				hideThumbs:-1,
+				hideTimerBar:"on",
 
-					keyboardNavigation:"off",
+				keyboardNavigation:"off",
 
-					navigationType:"bullet",
-					navigationArrows:"small",
-					navigationStyle:"round",
+				navigationType:"bullet",
+				navigationArrows:"small",
+				navigationStyle:"round",
 
-					navigationHAlign:"center",
-					navigationVAlign:"bottom",
-					navigationHOffset: 0,
-					navigationVOffset:-30,
+				navigationHAlign:"center",
+				navigationVAlign:"bottom",
+				navigationHOffset: 0,
+				navigationVOffset:-30,
 
-					soloArrowLeftHalign:"left",
-					soloArrowLeftValign:"center",
-					soloArrowLeftHOffset:20,
-					soloArrowLeftVOffset:0,
+				soloArrowLeftHalign:"left",
+				soloArrowLeftValign:"center",
+				soloArrowLeftHOffset:20,
+				soloArrowLeftVOffset:0,
 
-					soloArrowRightHalign:"right",
-					soloArrowRightValign:"center",
-					soloArrowRightHOffset:20,
-					soloArrowRightVOffset:0,
+				soloArrowRightHalign:"right",
+				soloArrowRightValign:"center",
+				soloArrowRightHOffset:20,
+				soloArrowRightVOffset:0,
 
 
-					touchenabled:"off",
-					swipe_velocity:"0.7",
-					swipe_max_touches:"1",
-					swipe_min_touches:"1",
-					drag_block_vertical:"false",
+				touchenabled:"off",
+				swipe_velocity:"0.7",
+				swipe_max_touches:"1",
+				swipe_min_touches:"1",
+				drag_block_vertical:"false",
 
-					stopAtSlide:-1,
-					stopAfterLoops:-1,
-					hideCaptionAtLimit:0,
-					hideAllCaptionAtLilmit:0,
-					hideSliderAtLimit:0,
+				stopAtSlide:-1,
+				stopAfterLoops:-1,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				hideSliderAtLimit:0,
 
-					fullWidth:"on",
-					fullScreen:"off",
-					fullScreenOffsetContainer: "",
+				fullWidth:"on",
+				fullScreen:"off",
+				fullScreenOffsetContainer: "",
 
-					dottedOverlay:"none",
-					forceFullWidth:"off",
+				dottedOverlay:"none",
+				forceFullWidth:"off",
 
-		      shadow:0
+	      shadow:0
 	    });
-
-
-	var dustContent = $( $("#dust-content") );
-	//DUST MOUSEMOVE
-	$("body").on("mousemove", function(e){
-		if( dustContent.length != 0 )
-			dustContent
-				.css("left", (10 + (-e.pageX/100)))
-				.css("bottom", (10 + (e.pageY/100)));
-	});
-	function dustCanvas(){
-
-	  window.canvasDust = {
-	  	circle: {
-	  		elements : [],
-	  		firstElPos: [],
-	  		pos: []
-	  	},
-	  	stepCheck: function (posx, posy, radius){
-	  		var arr = {
-										x: posx,
-										y: posy,
-										radius: radius
-									};
-
-				canvasDust.circle.pos.push(arr);
-
-				return arr;
-	  	},
-	  	circleAnimate : function ( canvasObj, x, y, i ){
-
-				var tl = new TimelineMax({
-					repeat: -1,
-					yoyo: true
-				});
-
-				tl
-					.to(canvasObj, getRandomIntFloat(3, 6), {
-			      konva: canvasDust.stepCheck( getRandomInt( x, x+200 ), 
-			      														 getRandomInt( y, y+100 ),
-			      														 getRandomInt( 0, 2 ) )})
-					.to(canvasObj, getRandomIntFloat(3, 6), {
-			      konva: canvasDust.stepCheck( getRandomInt( x, x+200 ), 
-			      														 getRandomInt( y, y+100 ),
-			      														 getRandomInt( 1, 3 ) )})
-					.to(canvasObj, getRandomIntFloat(3, 6), {
-			      konva: canvasDust.stepCheck( getRandomInt( x, x+200 ), 
-			      														 getRandomInt( y, y+100 ),
-			      														 getRandomInt( 1, 2 ) )})
-					.to(canvasObj, getRandomIntFloat(3, 6), {
-			      konva: canvasDust.stepCheck( getRandomInt( x, x+200 ), 
-			      														 getRandomInt( y, y+100 ),
-			      														 getRandomInt( 1, 2 ) )})
-					.to(canvasObj, getRandomIntFloat(3, 6), {
-			      konva: canvasDust.stepCheck( getRandomInt( x, x+200 ), 
-			      														 getRandomInt( y, y+100 ),
-			      														 getRandomInt( 0, 3 ) )})
-
-			}
-	  }
-
-		var width = window.innerWidth;
-		var height = 450;
-
-		var stage = new Konva.Stage({
-
-			container: 'dust-content',
-			width: width,
-			height: height
-
-		});
-
-		var layer = new Konva.Layer();
-
-
-		for ( var i = 0 ; i < 100 ; i++ ){
-
-			var firstElPosX = getRandomInt( 0, width );
-			var firstElPosY = getRandomInt( 0, height );
-
-			canvasDust.circle.firstElPos[i] = {
-				x: firstElPosX,
-				y: firstElPosY
-			}
-
-			canvasDust.circle.elements[i] = new Konva.Circle({
-				x: firstElPosX,
-				y: firstElPosY,
-				opacity: 0.3,
-				radius: 1,
-				fill: 'white',
-				strokeWidth: 4
-			});
-
-			layer.add( canvasDust.circle.elements[i] );
-
-			canvasDust.circleAnimate( canvasDust.circle.elements[i], firstElPosX, firstElPosY, i );
-			
-		}
-
-		stage.add(layer);
-	}
-	if( dustContent.length != 0 && !isMac) dustCanvas();
-
 
 
 	});
@@ -480,10 +382,78 @@ function scrolledDiv(el) {
 
 
 
+/**
+	REVOLUTION Slider
+*/
+	// INDEX SLIDER
 
- aspectRatio: '1:0.666'
+	  $(function() {
+	  	
+	   window.revSlider = $('.rev-slider').revolution({
+				delay:6000,
+				startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
+				startheight: $( window ).width() < 992 ? 400 : 610,
+				autoHeight:"off",
+				fullScreenAlignForce:"off",
+
+				onHoverStop:"off",
+
+				thumbWidth:100,
+				thumbHeight:50,
+				thumbAmount:3,
+
+				hideThumbsOnMobile:"off",
+				hideBulletsOnMobile:"on",
+				hideArrowsOnMobile:"on",
+				hideThumbsUnderResoluition:0,
+
+				hideThumbs:500,
+				hideTimerBar:"on",
+
+				keyboardNavigation:"off",
+
+				navigationType:"bullet",
+				navigationArrows:"small",
+				navigationStyle:"round",
+
+				navigationHAlign:"center",
+				navigationVAlign:"bottom",
+				navigationHOffset: 0,
+				navigationVOffset: 30,
+
+				soloArrowLeftHalign:"left",
+				soloArrowLeftValign:"center",
+				soloArrowLeftHOffset:30,
+				soloArrowLeftVOffset:0,
+
+				soloArrowRightHalign:"right",
+				soloArrowRightValign:"center",
+				soloArrowRightHOffset:30,
+				soloArrowRightVOffset:0,
 
 
+				touchenabled: $( window ).width() < 992 ? "on" : "off",
+				swipe_velocity:"0.7",
+				swipe_max_touches:"1",
+				swipe_min_touches:"1",
+				drag_block_vertical:"false",
 
+				stopAtSlide:-1,
+				stopAfterLoops:-1,
+				hideCaptionAtLimit:0,
+				hideAllCaptionAtLilmit:0,
+				hideSliderAtLimit:0,
 
+				fullWidth:"on",
+				fullScreen:"off",
+				fullScreenOffsetContainer: "",
+
+				dottedOverlay:"none",
+				forceFullWidth:"off",
+
+	      shadow:0
+
+	    });
+
+	 	});
 
