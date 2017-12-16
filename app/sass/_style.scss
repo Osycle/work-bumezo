@@ -508,7 +508,7 @@ button:hover, button:focus{
 .btn-bid{
 	display: inline-block;
 	@extend .btn-res;	
-	white-space: nowrap;
+	//white-space: nowrap;
 	text-transform: uppercase;
 	text-align: center;
 	color: white;
@@ -1180,6 +1180,11 @@ input.hamburger:checked ~ label > i{
  		//background-color: white;
  	}
 }
+input.hamburger:checked ~ label{
+	close, open{
+		color: black;
+	}
+}
 input.hamburger:checked ~ .drawer-list{
 	hr{visibility: visible;}
 	.min-menu-cat-item{
@@ -1827,16 +1832,7 @@ main{
 
 .rev-slider{
 	overflow: hidden;
-	//text-shadow: 0 0px 4px white, 0 0px 4px black;
-/* 	li:nth-child(odd){
-		.btn-def{
-			background-color: $color_2;
-			&:hover{
-				background-color: rgba($color_2, 0.5);
-				border-color: $color_2;
-			}
-		}
-	} */
+
 	.slide-header{
 		color: white;
 		h1{
@@ -1872,8 +1868,11 @@ main{
 
 
 	@media only screen and (max-width: 767px){
+		//pointer-events: none;
 		*{
 			font-size: 0.9em;
+			color: white;
+			text-shadow: 0 0px 5px black;
 		}
 		.slide-header{
 			text-align: center;
@@ -2122,14 +2121,15 @@ main{
 	display: inline-block;
 	line-height: 1;
 	img{
-		transition: filter 0.3s ease-out;
+		transition: all 0.3s ease-out;
 	}
 	.img-content{
 		padding: 0 30px;
 	}
 	&:hover{
 		img{
-			filter: drop-shadow( 0 3px 3px $color_1);
+			//filter: drop-shadow( 0 3px 3px $color_1);
+			transform: matrix(1, 0, 0, 1, 0, -10);
 		}
 	}
 	@media (max-width:991px){ 
@@ -2773,6 +2773,11 @@ main{
 		  }
 			&.is-selected{
 				//border-color: $color_2;
+			}
+		}
+		@media (max-width:767px){
+			.carousel-cell{
+				width: 20%;
 			}
 		}
 	}

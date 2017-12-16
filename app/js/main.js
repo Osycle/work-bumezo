@@ -389,7 +389,8 @@ function scrolledDiv(el) {
 
 	  $(function() {
 	  	
-	   window.revSlider = $('.rev-slider').revolution({
+	   window.revSlider = $('.rev-slider')
+	   .revolution({
 				delay:6000,
 				startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
 				startheight: $( window ).width() < 992 ? 400 : 610,
@@ -402,12 +403,12 @@ function scrolledDiv(el) {
 				thumbHeight:50,
 				thumbAmount:3,
 
-				hideThumbsOnMobile:"off",
+				hideThumbsOnMobile:"on",
 				hideBulletsOnMobile:"on",
 				hideArrowsOnMobile:"on",
 				hideThumbsUnderResoluition:0,
 
-				hideThumbs:500,
+				hideThumbs: 500,
 				hideTimerBar:"on",
 
 				keyboardNavigation:"off",
@@ -436,7 +437,7 @@ function scrolledDiv(el) {
 				swipe_velocity:"0.7",
 				swipe_max_touches:"1",
 				swipe_min_touches:"1",
-				drag_block_vertical:"false",
+				drag_block_vertical: "false",
 
 				stopAtSlide:-1,
 				stopAfterLoops:-1,
@@ -454,6 +455,6 @@ function scrolledDiv(el) {
 	      shadow:0
 
 	    });
-
+			$(revSlider).find("li").click(function(){ revSlider.revnext(); console.log("s") })
 	 	});
 

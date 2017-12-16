@@ -16967,7 +16967,6 @@ button:hover, button:focus {
 
 .btn-bid {
   display: inline-block;
-  white-space: nowrap;
   text-transform: uppercase;
   text-align: center;
   color: white;
@@ -17493,6 +17492,9 @@ label.hamburger {
   .min-menu-logo img {
     width: 180px; }
 
+input.hamburger:checked ~ label close, input.hamburger:checked ~ label open {
+  color: black; }
+
 input.hamburger:checked ~ .drawer-list hr {
   visibility: visible; }
 
@@ -18002,16 +18004,7 @@ main {
   position: relative; }
 
 .rev-slider {
-  overflow: hidden;
-  /* 	li:nth-child(odd){
-		.btn-def{
-			background-color: $color_2;
-			&:hover{
-				background-color: rgba($color_2, 0.5);
-				border-color: $color_2;
-			}
-		}
-	} */ }
+  overflow: hidden; }
   .rev-slider .slide-header {
     color: white; }
     .rev-slider .slide-header h1 {
@@ -18037,7 +18030,9 @@ main {
       width: 220px; }
   @media only screen and (max-width: 767px) {
     .rev-slider * {
-      font-size: 0.9em; }
+      font-size: 0.9em;
+      color: white;
+      text-shadow: 0 0px 5px black; }
     .rev-slider .slide-header {
       text-align: center;
       top: 100px !important;
@@ -18221,16 +18216,15 @@ main {
   display: inline-block;
   line-height: 1; }
   .short-advant-item img {
-    -webkit-transition: -webkit-filter 0.3s ease-out;
-    transition: -webkit-filter 0.3s ease-out;
-    -o-transition: filter 0.3s ease-out;
-    transition: filter 0.3s ease-out;
-    transition: filter 0.3s ease-out, -webkit-filter 0.3s ease-out; }
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
   .short-advant-item .img-content {
     padding: 0 30px; }
   .short-advant-item:hover img {
-    -webkit-filter: drop-shadow(0 3px 3px #F0A03D);
-    filter: drop-shadow(0 3px 3px #F0A03D); }
+    -webkit-transform: matrix(1, 0, 0, 1, 0, -10);
+    -ms-transform: matrix(1, 0, 0, 1, 0, -10);
+    transform: matrix(1, 0, 0, 1, 0, -10); }
   @media (max-width: 991px) {
     .short-advant-item {
       width: 100%;
@@ -18609,6 +18603,9 @@ main {
     transition: all 0.3s linear; }
     .catalog-article .carousel-nav .carousel-cell img {
       width: 100%; }
+  @media (max-width: 767px) {
+    .catalog-article .carousel-nav .carousel-cell {
+      width: 20%; } }
 
 .catalog-article .flickity-prev-next-button {
   -webkit-border-radius: 0;
