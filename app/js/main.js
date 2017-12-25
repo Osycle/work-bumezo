@@ -15,11 +15,6 @@ $(function(){
 			transitionEffect: "zoom-in-out"
 		});
 
-	//WOW
-	new WOW({
-		offset: 30
-	}).init();
-
 
   // Flikity Carousel
   	var arrowStyle = { 
@@ -240,6 +235,7 @@ $(function(){
 			setTimeout( function (){
 
 				$(".preloader").fadeToggle();
+				
 				//$( "body" ).css("overflow-y", "auto");
 				onLoaded();
 
@@ -393,8 +389,8 @@ function scrolledDiv(el) {
 	   .revolution({
 				delay:6000,
 				startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
-				startheight: $( window ).width() < 992 ? 400 : 610,
-				autoHeight:"off",
+				startheight: $( window ).width() < 992 ? 500 : "65vh",
+				autoHeight:"on",
 				fullScreenAlignForce:"off",
 
 				onHoverStop:"off",
@@ -447,7 +443,8 @@ function scrolledDiv(el) {
 
 				fullWidth:"on",
 				fullScreen:"off",
-				fullScreenOffsetContainer: "",
+
+				fullScreenOffsetContainer: "#header",
 
 				dottedOverlay:"none",
 				forceFullWidth:"off",
@@ -455,6 +452,6 @@ function scrolledDiv(el) {
 	      shadow:0
 
 	    });
-			$(revSlider).find("li").click(function(){ revSlider.revnext(); console.log("s") })
+			//$(revSlider).find("li").click(function(){ revSlider.revnext(); console.log("s") })
 	 	});
 

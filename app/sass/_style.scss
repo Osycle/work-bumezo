@@ -762,7 +762,7 @@ button:hover, button:focus{
 										 --- HEADER ---
 */
 $bg-image-1: url("../img/bg/bg-1.jpg") no-repeat;
-$header-height: 120px; 
+$header-height: 15vh; 
 //$header-height-2: 170px; 
 
 #header{
@@ -806,8 +806,12 @@ $header-height: 120px;
 .header-tel{
 	width: 20%;	
 	@extend .soc-tel;
-	p{
-		margin: 5px 0;
+	p{margin: 5px 0;}
+	a{
+		transition: all 0.3s ease-in-out;
+		&:hover{
+			color: $color_1;	
+		}
 	}
 }
 .header-social{
@@ -831,7 +835,7 @@ $header-height: 120px;
   	display: inline-block;
   }
   img{
-		width: 200px;
+		width: 180px;
 	}
 	p{ margin: 5px 0; }
 	&:hover, &:focus{
@@ -843,7 +847,9 @@ $header-height: 120px;
   		outline: 0;
   	}
   }
-
+  @media (max-width: 1199px) and (min-width: 992px){
+  	p{ font-size: 0.9em; }
+  }
 }
 
 .skin-header-bottom{
@@ -859,13 +865,14 @@ $header-height: 120px;
 	}
 	.header-cat-item{
 
-		padding: 30px 10px 40px;
+		//padding: 30px 10px 40px;
+		padding: 4vh 10px 5vh;
 		//padding-bottom: 40px;
 		text-align: center;
 		color: black;
 		i{
 			transition: ease-in-out;
-			font-size: 60px;
+			font-size: 50px;
 		}
 		&:hover{
 			
@@ -878,11 +885,11 @@ $header-height: 120px;
 			&:nth-child(3n+3){
 				a:hover{color: $color_3;}
 			}
-
-
-
-
 			
+		}
+		@media (max-width: 1199px) and (min-width: 992px){
+			i{font-size: 40px;}
+			p{ font-size: 0.8em;}
 		}
 
 	}
@@ -1076,7 +1083,11 @@ $header-height: 120px;
     top: 0;
   }
   &.scrolled{
-  	.bg-black{background: rgba(white, 0.9);}
+  	
+  	.bg-black{
+  		background: rgba(white, 0.9);
+  		box-shadow: 0 1px 30px -10px black;
+  	}
   }
 }
 
@@ -1141,6 +1152,8 @@ label.hamburger{
 }
 .min-menu-cat-item{
 	//opacity: 0;
+	height: 220px;
+
 	&:hover{
 		transform: scale(1.1);
 	}
@@ -1832,7 +1845,9 @@ main{
 
 .rev-slider{
 	overflow: hidden;
-
+	[class*="slide"]{
+		top: 10vh;
+	}
 	.slide-header{
 		color: white;
 		h1{
@@ -1865,7 +1880,14 @@ main{
 	}
 
 
-
+	@media only screen and (max-width: 991px){
+		*{
+			font-size: 1em !important;
+		}
+		.btn-def{
+			font-size: 0.88em !important;
+		}
+	}
 
 	@media only screen and (max-width: 767px){
 		//pointer-events: none;
@@ -1954,10 +1976,13 @@ main{
 
 
 	@media only screen and (max-width: 991px){
-		h1,h2,h3{
+		h1,h2,h3, p{
 			white-space: normal;
 	    width: 100% !important;
 	    text-align: center !important;
+		}
+		h2{
+			font-size: 3em !important;
 		}
 	}
 	@media only screen and (max-width: 767px){
