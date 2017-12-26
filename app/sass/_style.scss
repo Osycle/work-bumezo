@@ -674,7 +674,7 @@ button:hover, button:focus{
 			}
 			a{
 				border:1px solid transparent;
-				color: white;
+				color: black;
 				border: 0;
 				background-color: transparent;
 
@@ -2182,6 +2182,20 @@ main{
 
 
 .short-stock{
+	h1 {
+		transition: all 0.3s ease-in-out;
+		a{
+			position: relative;
+			display: block;
+		}
+		&:before{transition: all 0.3s ease-in-out;}
+		&:hover{
+			&::before{
+				transform: scale(1.05);
+				
+			}
+		}
+	}
 }
 .short-stock-content{
 	
@@ -2191,6 +2205,7 @@ main{
 	//filter: grayscale(1);
 	.container{position: relative;}
 	margin: 45px 0;
+
 	.flickity-prev-next-button{
 		border: 1px solid #392316;
 		background: transparent;
@@ -2980,6 +2995,75 @@ main{
 
 	}
 }
+
+
+
+
+
+
+
+.stock{
+
+}
+.stock-item{
+	margin: 30px 0;
+	.img-content{
+		img{
+			transition: all 0.25s ease-in-out;
+			filter: brightness(95%);
+			&:hover, &:focus{
+				filter: brightness(100%);
+			}
+		}
+	}
+	.desc-content{
+		@include table-celling(230px);
+	}
+	@media (max-width: 767){
+
+	}
+}
+
+
+
+
+
+
+.stock-article{
+	color: black;
+}
+
+.stock-article-content{
+	color: black;
+	h2{
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	.desc-content{
+		margin: 15px 0;
+	}
+	img{
+		padding: 0 15px;
+	}
+
+	@media (max-width: 767px){
+		img{
+			width: 85%;
+			float: initial;
+			margin: auto;
+		}
+	}
+}
+.stock-article-item{
+	margin: 30px 0;
+}
+.stock-article-desc{
+	padding: 0 15px;
+}
+
+
+
+
 
 
 
