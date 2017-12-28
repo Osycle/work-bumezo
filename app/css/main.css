@@ -14574,7 +14574,7 @@ button:hover, button:focus {
     .header-cat .header-cat-item i {
       font-size: 40px; }
     .header-cat .header-cat-item p {
-      font-size: 0.8em; } }
+      font-size: 0.9em; } }
 
 .logo, .main-navbar, .header-tel, .header-social {
   display: table-cell;
@@ -15435,8 +15435,7 @@ main {
       margin-left: -585px; } }
 
 .rev-slider-page {
-  overflow: hidden;
-  text-shadow: 0 0px 4px white, 0 0px 4px black; }
+  overflow: hidden; }
   .rev-slider-page [data-flicker]:before {
     top: -25%; }
   .rev-slider-page li:nth-child(odd) .btn-def {
@@ -15479,18 +15478,22 @@ main {
     .rev-slider-page h2 {
       font-size: 3em !important; } }
   @media only screen and (max-width: 767px) {
-    .rev-slider-page * {
-      font-size: 0.9em; }
-    .rev-slider-page .slide-header {
-      text-align: center;
-      top: 150px !important;
-      left: 0 !important;
-      width: 100%; }
-      .rev-slider-page .slide-header .btn-def {
-        margin: auto;
-        margin-top: 10px; }
-      .rev-slider-page .slide-header p {
-        display: none; } }
+    .rev-slider-page {
+      text-shadow: 0 0px 4px white, 0 0px 4px black; }
+      .rev-slider-page * {
+        font-size: 0.9em; }
+      .rev-slider-page .slide-header {
+        text-align: center;
+        top: 150px !important;
+        left: 0 !important;
+        width: 100%; }
+        .rev-slider-page .slide-header .btn-def {
+          margin: auto;
+          margin-top: 10px; }
+        .rev-slider-page .slide-header p {
+          display: none; } }
+  .rev-slider-page .color-black {
+    color: black; }
 
 .tp-caption {
   white-space: normal !important; }
@@ -15960,9 +15963,6 @@ main {
   font-size: 1.75em;
   color: #F0A03D; }
 
-.catalog-article .carousel {
-  padding: 10px; }
-
 .catalog-article .carousel-cell {
   width: 100%;
   margin: 0 20px;
@@ -15991,6 +15991,7 @@ main {
     width: 120px;
     margin: 0 15px;
     overflow: hidden;
+    padding: 5px;
     border: 1px solid #F0A03D;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
@@ -16231,11 +16232,11 @@ main {
 */
 @media only screen and (max-width: 1199px) {
   html body {
-    font-size: 16px; } }
+    font-size: 14px; } }
 
 @media only screen and (max-width: 991px) {
   html body {
-    font-size: 15px; }
+    font-size: 14px; }
   main {
     font-size: 1.3em; } }
 

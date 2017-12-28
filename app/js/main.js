@@ -243,7 +243,12 @@ $(function(){
 
 		: void(0);
 	}
-
+	if($("#modal-bid").length)
+	$("[data-target='#modal-bid']").on("click", function(e){
+		try{
+	 	window.item_select = $(this).closest(".catalog-article-desc").find("h2").text();
+		}catch(e){ console.error("Параметр отправки не найден") }
+	})
 
 
 	//PAGES REV SLIDER

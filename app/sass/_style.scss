@@ -889,7 +889,7 @@ $header-height: 15vh;
 		}
 		@media (max-width: 1199px) and (min-width: 992px){
 			i{font-size: 40px;}
-			p{ font-size: 0.8em;}
+			p{ font-size: 0.9em;}
 		}
 
 	}
@@ -1923,7 +1923,7 @@ main{
 }
 .rev-slider-page{
 	overflow: hidden;
-	text-shadow: 0 0px 4px white, 0 0px 4px black;
+	
 	[data-flicker]:before{
 		top:-25%;
 	}
@@ -1976,6 +1976,7 @@ main{
 
 
 	@media only screen and (max-width: 991px){
+
 		h1,h2,h3, p{
 			white-space: normal;
 	    width: 100% !important;
@@ -1986,6 +1987,7 @@ main{
 		}
 	}
 	@media only screen and (max-width: 767px){
+		text-shadow: 0 0px 4px white, 0 0px 4px black;
 		*{
 			font-size: 0.9em;
 		}
@@ -2003,6 +2005,9 @@ main{
 			}
 		}
 
+	}
+	.color-black{
+		color: black;
 	}
 }//end
 
@@ -2767,13 +2772,10 @@ main{
 
 
 
-
-
-
 .catalog-article{
 
 	.carousel {
-    padding: 10px;
+    //padding:  0 10px;
 	}
 
 	.carousel-cell {
@@ -2806,6 +2808,7 @@ main{
 			width: 120px;
 		  margin:0 15px;
 		  overflow: hidden;
+		      padding: 5px;
 		  border: 1px solid $color_1;
 		  transition: all 0.3s linear;
 		  img{
